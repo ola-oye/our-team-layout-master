@@ -1,3 +1,152 @@
-body{
-    color: blue;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+.container {
+  background-color: #f3f4f6;
+  background-image: url("resources/Background_decor.svg");
+  background-repeat: no-repeat;
+  object-fit: cover;
+  border-radius: 20px;
+  max-width: 280px;
+  margin: 5% auto;
+  display: grid;
+}
+
+.teamTag {
+  color: #263fa9;
+  font-size: 0.875rem;
+}
+.bannerTitle {
+  margin-block: 20px;
+  font-weight: 600;
+}
+.bannerDiscription {
+  line-height: 20px;
+  font-size: 0.875rem;
+}
+.grid-item-0 {
+  min-height: 280px;
+  padding: 20px;
+}
+.grid-item-1 {
+  background-color: #c1b6f8;
+}
+.grid-item-2 {
+  background-color: #edacd2;
+}
+.grid-item-3 {
+  background-color: #9dc4f8;
+}
+.grid-item-4 {
+  background-color: #f8d8b0;
+}
+.grid-item-5 {
+  background-color: #86e7d4;
+}
+
+.team-card {
+  position: relative;
+  min-height: 280px;
+}
+.team-member-img {
+  position: absolute;
+  max-width: 100%;
+  max-height: auto;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.gradient {
+  position: absolute;
+  max-width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+.member-info {
+  position: absolute;
+  max-width: 100%;
+  bottom: 10%;
+  left: 5%;
+  z-index: 4;
+  color: #fff;
+  font-size: 0.9rem;
+}
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.more-members {
+  position: absolute;
+  color: #394150;
+  bottom: 5%;
+  left: 5%;
+  font-size: 0.875rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media only screen and (min-width: 460px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-areas: "a a"; */
+    max-width: 560px;
+  }
+  .grid-item-0 {
+    max-width: 400px;
+    grid-column: 1 / 3;
+  }
+  .grid-item-5,
+  .grid-item-5 > .gradient {
+    border-bottom-left-radius: 20px;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .container {
+    max-width: 850px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+      "grid-item-0 grid-item-0 grid-item-0"
+      "... ... ...."
+      "grid-item-6 grid-item-4 grid-item-5";
+  }
+  .grid-item-0 {
+    max-width: 450px;
+    grid-area: grid-item-0;
+  }
+  .grid-item-4 {
+    grid-area: grid-item-4;
+  }
+  .grid-item-5 {
+    grid-area: grid-item-5;
+  }
+  .grid-item-6 {
+    grid-area: grid-item-6;
+  }
+  .grid-item-5,
+  .grid-item-5 > .gradient {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 1130px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "grid-item-0 grid-item-0 grid-item-1 grid-item-2"
+      "grid-item-6 grid-item-3 grid-item-4 grid-item-5";
+  }
+  .grid-item-2,
+  .grid-item-2 > .gradient {
+    border-top-right-radius: 20px;
+  }
 }
